@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo da memória</title>
+  <meta charset="UTF-8">
+  <title>Jogo da Memória Literário</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        
-    </script>
-    
+  <h1>📚 Jogo da Memória Literário</h1>
+  <p>Encontre os pares de ícones!</p>
+ 
+  <!-- Painel de informações -->
+  <div id="info">
+    <p>Jogador: <span id="current-player">1</span></p>
+    <p>Movimentos: <span id="moves">0</span></p>
+    <p>Pares encontrados: <span id="matches">0</span></p>
+    <p>⏱️ Tempo: <span id="timer">0</span> segundos</p>
+ 
+    <label for="difficulty">Dificuldade:</label>
+    <select id="difficulty" onchange="restartGame()">
+      <option value="4">Fácil (4 pares)</option>
+      <option value="6" selected>Médio (6 pares)</option>
+      <option value="8">Difícil (8 pares)</option>
+    </select>
+ 
+    <!-- Novo: Modo de jogo -->
+    <label for="mode">Modo de Jogo:</label>
+    <select id="mode" onchange="switchMode()">
+      <option value="single">Um Jogador Local</option>
+      <option value="multi">Multijogador local</option>
+    </select>
+ 
+    <button onclick="restartGame()">🔄 Reiniciar</button>
+  </div>
+ 
+  <!-- Tabuleiro -->
+  <div id="game-board" class="board"></div>
+ 
+  <script src="script.js"></script>
 </body>
 </html>
